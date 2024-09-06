@@ -1,7 +1,7 @@
 package main
 
 import (
-	"artificial-dialogue/internal/server"
+	"artificial-dialogue/internal/controller"
 	"fmt"
 )
 
