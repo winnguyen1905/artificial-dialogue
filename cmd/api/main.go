@@ -1,17 +1,25 @@
 package main
 
 import (
-	"artificial-dialogue/internal/controller"
-	"fmt"
+	// "artificial-dialogue/internal/controller"
+	// "fmt"
+	// "artificial-dialogue/client"
+	// "artificial-dialogue/internal/handler"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	r := gin.Default()
+	// bot := client.Init()
 
-	server := server.NewServer()
+ 	// handler.Init(bot)
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "pong",
+		})
+	})
 
-	err := server.ListenAndServe()
-
-	if err != nil {
-		panic(fmt.Sprintf("cannot start server: %s", err))
-	}
+	r.Run(":8080")
 }

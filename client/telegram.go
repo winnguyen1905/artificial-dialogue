@@ -3,6 +3,7 @@ package client
 import (
 	"artificial-dialogue/config"
 	"log"
+
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
