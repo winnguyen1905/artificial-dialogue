@@ -1,25 +1,12 @@
 package main
 
 import (
-	// "artificial-dialogue/internal/controller"
-	// "fmt"
-	// "artificial-dialogue/client"
-	// "artificial-dialogue/internal/handler"
-	"net/http"
-
-	"github.com/gin-gonic/gin"
+	"artificial-dialogue/internal/router"
 )
 
 func main() {
-	r := gin.Default()
-	// bot := client.Init()
-
- 	// handler.Init(bot)
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
+	
+	r := router.IndexRouter()
 
 	r.Run(":8080")
 }
