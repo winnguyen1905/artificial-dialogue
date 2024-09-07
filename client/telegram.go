@@ -1,16 +1,16 @@
 package client
 
-// import (
-// 	"artificial-dialogue/config"
-// 	"log"
-// 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
-// )
+import (
+	"artificial-dialogue/config"
+	"log"
+	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+)
 
-// func Init() *tgbotapi.BotAPI {
-// 	bot, err := tgbotapi.NewBotAPI(config.Config("TELEGRAM_APITOKEN"))
-// 	if err != nil {
-// 		log.Panic(err)
-// 	}
-// 	bot.Debug = true
-// 	return bot
-// }
+func Init() *tgbotapi.BotAPI {
+	bot, err := tgbotapi.NewBotAPI(config.Config("TELEGRAM_APITOKEN"))
+	if err != nil {
+		log.Panic(err)
+	}
+	bot.Debug = true
+	return bot
+}

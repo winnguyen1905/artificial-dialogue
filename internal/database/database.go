@@ -57,6 +57,7 @@ func New() Service {
 	dbInstance = &service{
 		db: db,
 	}
+
 	return dbInstance
 }
 
@@ -95,6 +96,7 @@ func (s *service) Health() map[string]string {
 	if dbStats.OpenConnections > 40 { // Assuming 50 is the max for this example
 		stats["message"] = "The database is experiencing heavy load."
 	}
+
 	if dbStats.WaitCount > 1000 {
 		stats["message"] = "The database has a high number of wait events, indicating potential bottlenecks."
 	}
