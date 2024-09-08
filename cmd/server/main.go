@@ -1,6 +1,7 @@
 package main
 
 import (
+	"artificial-dialogue/cmd/cli"
 	"artificial-dialogue/internal/router"
 )
 
