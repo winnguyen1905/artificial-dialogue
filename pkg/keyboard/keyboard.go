@@ -5,40 +5,27 @@ import (
 )
 
 type CmdKeyboard interface {
-	hello()
-	saybye()
+	TradeBaseKeyboard() CmdKeyboard;
 }
 
 type cmdKeyboard struct {
-	cmdKeyboard *tgbotapi.ReplyKeyboardMarkup
+	cmdKeyboard *tgbotapi.ReplyKeyboardMarkup;
 }
 
-func (k *cmdKeyboard) hello() {
-	print("Hello !")
-}
-
-func (k *cmdKeyboard) saybye() {
-	print("Bye Bye !")
-}
-
-var cmdKey *cmdKeyboard
-
-func New() CmdKeyboard {
-	var cmdKeyboards = tgbotapi.NewReplyKeyboard(
+func (cmdk *cmdKeyboard) TradeBaseKeyboard() CmdKeyboard {
+	var tmp tgbotapi.ReplyKeyboardMarkup = tgbotapi.NewReplyKeyboard(
 		tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton("/set_todo"),
+			tgbotapi.NewKeyboardButton("/trade_stock"),
 		),
 		tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton("/delete_todo"),
+			tgbotapi.NewKeyboardButton("/evaluation"),
 		),
 		tgbotapi.NewKeyboardButtonRow(
-			tgbotapi.NewKeyboardButton("/show_all_todos"),
+			tgbotapi.NewKeyboardButton("/watchlist"),
 		),
-	)
+	);
 
-	cmdKey = &cmdKeyboard{
-		cmdKeyboard: &cmdKeyboards,
-	}
-
-	return cmdKey
+	return &cmdKeyboard{
+		cmdKeyboard: &tmp,
+	};
 }

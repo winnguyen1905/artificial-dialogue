@@ -1,6 +1,7 @@
 package router
 
 import (
+	"artificial-dialogue/internal/controller"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -11,7 +12,7 @@ func IndexRouter() *gin.Engine {
 	
 	api := r.Group("/api/v1") 
 	{
-		api.GET("/", )
+		api.GET("/", controller.NewUserController().GetUserById)
 	}
 
 	return r
