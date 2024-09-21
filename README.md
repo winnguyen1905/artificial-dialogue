@@ -1,1 +1,1 @@
-TelegramBot Mixing OpenAIAPI & Go-Gin Server
+TelegramBot Mixing OpenAIAPI & Gin webhook
